@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:background="@color/white">
+	
+	
+	
+	<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/white">
+		
+		<RelativeLayout
+				android:id="@+id/toolbar"
+				android:layout_marginTop="10dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+			<LinearLayout
+					android:layout_alignParentStart="true"
+					android:id="@+id/backtoauth"
+					
+					android:layout_width="wrap_content"
+					android:layout_height="40dp"
+					android:orientation="horizontal"
+					
+					android:layout_marginLeft="10dp">
+				
+				<ImageView
+						android:tint="@color/colorAccent"
+						
+						android:id="@+id/signinback"
+						android:layout_width="wrap_content"
+						android:layout_height="50dp"
+						android:src="@drawable/back"
+						android:padding="10dp"
+						android:layout_gravity="center"
+				
+				/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Back"
+						android:textSize="18dp"
+						android:textColor="@color/black"
+						android:layout_marginLeft="16dp"
+						android:layout_gravity="center"
+						android:gravity="center"
+				/>
+			
+			
+			
+			
+			</LinearLayout>
+			<LinearLayout
+					
+					android:id="@+id/forgotPassword"
+					android:layout_alignParentEnd="true"
+					
+					android:layout_gravity="end"
+					android:gravity="end"
+					android:layout_width="wrap_content"
+					android:layout_height="40dp"
+					android:orientation="horizontal"
+			>
+				
+				<TextView
+						android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+						
+						android:layout_gravity="center"
+						android:layout_marginEnd="4dp"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						
+						android:text="Forgot Password"
+						android:textColor="@android:color/black" />
+			</LinearLayout>
+		</RelativeLayout>
+		
+		<ScrollView
+				android:layout_width="match_parent"
+				android:layout_below="@+id/toolbar"
+				android:layout_marginTop="20dp"
+				
+				android:layout_height="match_parent">
+			<LinearLayout
+					android:orientation="vertical"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+				
+				<ImageView
+						android:layout_gravity="center_horizontal"
+						android:id="@+id/logo"
+						android:visibility="visible"
+						android:layout_width="100dp"
+						android:layout_height="100dp"
+						android:src="@drawable/logo"
+				/>
+				
+				<LinearLayout
+						android:gravity="center_horizontal"
+						
+						android:layout_below="@+id/logo"
+						android:layout_marginStart="30dp"
+						android:layout_marginEnd="30dp"
+						android:layout_marginTop="50dp"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:layout_centerVertical="true">
+					
+					
+					
+					
+					
+					<com.google.android.material.textfield.TextInputLayout
+							android:layout_width="match_parent"
+							
+							
+							app:endIconDrawable="@drawable/ic_email_black_24dp"
+							app:endIconMode="custom"
+							app:endIconTint="@android:color/black"
+							android:layout_marginBottom="10dp"
+							
+							app:endIconTintMode="src_atop"
+							style="@style/TextLabelDark"
+							android:textColorHint="@android:color/black"
+							app:hintTextColor="@android:color/black"
+							android:layout_height="wrap_content">
+						
+						<com.google.android.material.textfield.TextInputEditText
+								android:id="@+id/email"
+								android:layout_width="match_parent"
+								android:layout_height="match_parent"
+								android:hint="Email"
+								
+								android:textColor="@android:color/black"
+								android:layout_marginTop="20dp"
+								android:textColorHint="@android:color/black"
+								
+								android:inputType="textEmailAddress"
+						
+						/>
+					
+					</com.google.android.material.textfield.TextInputLayout>
+					<com.google.android.material.textfield.TextInputLayout
+							android:layout_width="match_parent"
+							
+							style="@style/TextLabelDark"
+							android:layout_marginBottom="10dp"
+							
+							android:textColorHint="@android:color/black"
+							app:passwordToggleTint="@android:color/black"
+							app:passwordToggleEnabled="true"
+							
+							app:counterEnabled="true"
+							app:counterTextColor="@android:color/black"
+							
+							app:hintTextColor="@android:color/black"
+							
+							
+							android:layout_height="wrap_content">
+						<com.google.android.material.textfield.TextInputEditText
+								android:id="@+id/password"
+								android:layout_width="match_parent"
+								android:layout_height="match_parent"
+								
+								
+								android:textColor="@android:color/black"
+								android:hint="Password"
+								android:layout_marginTop="20dp"
+								android:textColorHint="@android:color/black"
+								
+								android:inputType="textPassword"
+						
+						/>
+					
+					</com.google.android.material.textfield.TextInputLayout>
+					
+					<com.google.android.material.button.MaterialButton
+							android:id="@+id/signin"
+							android:layout_width="300dp"
+							android:layout_height="wrap_content"
+							android:text="SIGN IN"
+							
+							android:layout_gravity="center_horizontal"
+							android:gravity="center"
+							
+							style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+							
+							android:layout_marginBottom="12dp"
+							android:textAppearance="@style/Widget.MaterialComponents.Button.TextButton"
+							android:textColor="@color/white"
+							
+							android:textSize="16.5sp"
+							android:textStyle="bold"
+							app:backgroundTint="@color/colorAccent"
+							app:cornerRadius="5dp"
+							
+							app:rippleColor="@color/colorPrimary"
+					
+					
+					/>
+					
+					<TextView
+							android:visibility="gone"
+							android:layout_marginTop="20dp"
+							android:textAlignment="center"
+							android:textColor="@android:color/white"
+							android:text="Forgot Password"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content" />
+				
+				
+				
+				
+				
+				</LinearLayout>
+			
+			</LinearLayout>
+		
+		</ScrollView>
+		
+		<com.wang.avi.AVLoadingIndicatorView
+				android:visibility="gone"
+				android:id="@+id/avi"
+				app:indicatorColor="@color/colorPrimary"
+				android:layout_centerInParent="true"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:indicatorName="BallPulseSyncIndicator"
+		/>
+	</RelativeLayout>
+</FrameLayout>

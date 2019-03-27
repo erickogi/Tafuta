@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:id="@+id/main"
+		android:background="@color/colorAccent"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".ui.main.MainFragment">
+	
+	
+	<com.google.android.material.card.MaterialCardView
+			android:id="@+id/scanCard"
+			app:cardElevation="10dp"
+			android:padding="6dp"
+			
+			
+			
+			app:cardUseCompatPadding="true"
+			android:background="@color/white"
+			app:cardBackgroundColor="@color/white"
+			android:layout_centerInParent="true"
+			android:layout_width="300dp"
+			android:layout_height="300dp"
+			android:shape="ring"
+			app:cardCornerRadius="130dp">
+		
+		<RelativeLayout
+				android:id="@+id/scanRl"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+			<com.kogicodes.sokoni.utils.CircleImage.KogiImageView
+					android:layout_width="100dp"
+					
+					android:backgroundTint="@color/white"
+					android:id="@+id/addIcon"
+					android:layout_centerInParent="true"
+					
+					android:src="@drawable/scan"
+					android:layout_height="100dp"/>
+			<TextView
+					android:textStyle="bold"
+					android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+					android:textColor="@color/black"
+					android:layout_centerInParent="true"
+					android:layout_below="@+id/addIcon"
+					android:text="SCAN"
+					android:layout_width="wrap_content"
+			          android:layout_height="wrap_content"
+			/>
+		
+		</RelativeLayout>
+		
+	</com.google.android.material.card.MaterialCardView>
+	
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:layout_width="wrap_content"
+			android:id="@+id/fab"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentEnd="true"
+			android:layout_margin="16dp"
+			android:src="@drawable/ic_add_black_24dp"
+	  
+			android:layout_height="wrap_content"/>
+</RelativeLayout>

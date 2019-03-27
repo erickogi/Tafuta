@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:id="@+id/auth"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".ui.auth.AuthFragment">
+	<TextView android:layout_width="wrap_content"
+	          android:layout_height="wrap_content"
+	          android:text="ASSET TRACKER"
+	          android:textColor="@android:color/black"
+	          android:textStyle="bold"
+	          android:layout_alignParentTop="true"
+	          android:layout_marginTop="30dp"
+	          android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+	          android:layout_centerHorizontal="true"
+	/>
+	<ImageView
+			android:id="@+id/logo"
+			android:layout_centerInParent="true"
+			android:src="@drawable/logo"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Hello World!"
+	/>
+	
+
+	<LinearLayout
+			android:orientation="horizontal"
+			android:padding="12dp"
+			android:layout_width="match_parent"
+			android:layout_alignParentBottom="true"
+			android:layout_height="wrap_content">
+		
+		<com.google.android.material.button.MaterialButton
+				android:id="@+id/signup"
+				android:layout_width="0dp"
+				android:layout_weight="1"
+				android:layout_height="wrap_content"
+				android:text="SIGN UP"
+				
+				android:gravity="center"
+				
+				style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+				
+				android:layout_gravity="end"
+				android:layout_marginBottom="12dp"
+				android:textAppearance="@style/Widget.MaterialComponents.Button.TextButton"
+				android:textColor="@color/white"
+				
+				android:textSize="16.5sp"
+				android:textStyle="bold"
+				app:backgroundTint="@color/colorAccent"
+				app:cornerRadius="5dp"
+				
+				app:rippleColor="@color/colorPrimary"
+		
+		
+		/>
+		
+		<com.google.android.material.button.MaterialButton
+				android:id="@+id/signin"
+				android:layout_weight="1"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="SIGN IN"
+				
+				android:gravity="center"
+				
+				style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+				
+				android:layout_gravity="end"
+				android:layout_marginBottom="12dp"
+				android:textAppearance="@style/Widget.MaterialComponents.Button.TextButton"
+				android:textColor="@color/white"
+				
+				android:textSize="16.5sp"
+				android:textStyle="bold"
+				app:backgroundTint="@color/colorAccent"
+				app:cornerRadius="5dp"
+				
+				app:rippleColor="@color/colorPrimary"
+		
+		
+		/>
+	
+	</LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tafuta</string>
+    <string name="recover_password">Enter the email used to register A link to reset your password will be sent to your
+        email
+    </string>
+    <string name="no_connection">You internet connection is off</string>
+
+</resources>
