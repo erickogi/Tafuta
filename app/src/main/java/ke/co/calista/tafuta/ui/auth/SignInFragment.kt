@@ -16,6 +16,7 @@ import com.kogicodes.sokoni.models.v1.oauth.Oauth
 import com.kogicodes.sokoni.models.v1.oauth.Profile
 import ke.co.calista.tafuta.ui.MainActivity
 import ke.co.calista.tafuta.R
+import ke.co.calista.tafuta.model.oauth.LoginData
 import ke.co.calista.tafuta.storage.PrefrenceManager
 import ke.co.calista.tafuta.utils.Validator
 import kotlinx.android.synthetic.main.sign_in_fragment.*
@@ -40,10 +41,10 @@ class SignInFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(AuthViewModel::class.java)
         // TODO: Use the ViewModel
 
-        backtoauth.setOnClickListener({goBackToAuth()})
-        signin.setOnClickListener({ signIn() })
-        signinback.setOnClickListener({goBackToAuth()})
-        forgotPassword.setOnClickListener({forgotPassword()})
+        backtoauth.setOnClickListener {goBackToAuth()}
+        signin.setOnClickListener { signIn() }
+        signinback.setOnClickListener {goBackToAuth()}
+        forgotPassword.setOnClickListener {forgotPassword()}
 
         viewModel.observeSignIn().observe(this, Observer { data->
             run {
@@ -61,8 +62,7 @@ class SignInFragment : Fragment() {
         })
     }
 
-    private fun setStatus(data: Resource<Oauth>) {
-
+    private fun setStatus(data: Resource<LoginData>) {
         val status: Status =data.status
 
         if(status== Status.LOADING){

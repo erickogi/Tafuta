@@ -2,24 +2,23 @@ package ke.co.calista.tafuta.storage
 
 
 import android.content.Context
-import android.nfc.Tag
-
-
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import ke.co.calista.tafuta.model.Converters
+import ke.co.calista.tafuta.model.oauth.LoginData
+import ke.co.calista.tafuta.storage.dao.LoginDataDao
 
-import com.kogicodes.sokoni.models.v1.oauth.Profile
-
-import ke.co.calista.tafuta.storage.dao.ProfileDao
-
-@Database(entities = arrayOf(Profile::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(LoginData::class), version = 2, exportSchema = false)
+@TypeConverters(Converters::class)
 abstract class XDatabase : RoomDatabase() {
 
 
     companion object {
 
         private lateinit var INSTANCE: XDatabase
+
         fun getDatabase(context: Context): XDatabase? {
 
 
@@ -37,7 +36,7 @@ abstract class XDatabase : RoomDatabase() {
         }
     }
 
-    abstract fun profileDao(): ProfileDao
+    abstract fun loginDataDao(): LoginDataDao
 
 
 

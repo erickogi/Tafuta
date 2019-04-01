@@ -17,9 +17,9 @@ class PrefrenceManager(internal var _context: Context) {
     companion object {
 
         private val LOGIN_STATUS = "LOGIN_STATUS"
-        private val PROFILE = "tafuta_user_profile"
+        private val PROFILE = "tafuta1_user_profile"
         private val FIREBASE_TOKEN = "firebasetoken"
-        private val PREF_NAME = "tafuta_prefrences"
+        private val PREF_NAME = "tafuta1_prefrences"
 
     }
 
@@ -52,22 +52,6 @@ class PrefrenceManager(internal var _context: Context) {
         return pref.getInt(LOGIN_STATUS,0)
     }
 
-    fun saveProfile(data: Oauth) {
-
-        editor.putString(Gson().toJson(data), PROFILE)
-        editor.commit()
-    }
-
-    fun getProfile(): Oauth {
-
-        if (!pref.getString(PROFILE, "").equals("")) {
-            return Gson().fromJson(pref.getString(PROFILE, ""), Oauth::class.java)
-
-        } else {
-            return Oauth()
-        }
-
-    }
 
 
 }

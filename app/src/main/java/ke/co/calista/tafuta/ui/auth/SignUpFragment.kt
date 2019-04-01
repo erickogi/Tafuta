@@ -18,6 +18,7 @@ import com.kogicodes.sokoni.models.custom.Status
 import com.kogicodes.sokoni.models.v1.oauth.Oauth
 import com.kogicodes.sokoni.models.v1.oauth.Profile
 import ke.co.calista.tafuta.R
+import ke.co.calista.tafuta.model.oauth.LoginData
 import ke.co.calista.tafuta.utils.Validator
 import kotlinx.android.synthetic.main.sign_up_fragment.*
 
@@ -89,7 +90,7 @@ class SignUpFragment : Fragment() {
 
     }
 
-    private fun setStatus(data: Resource<Oauth>) {
+    private fun setStatus(data: Resource<LoginData>) {
 
         val status: Status =data.status
 

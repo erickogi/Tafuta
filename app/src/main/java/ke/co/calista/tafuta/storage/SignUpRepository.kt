@@ -8,6 +8,8 @@ import com.kogicodes.sokoni.models.v1.oauth.Oauth
 import com.kogicodes.sokoni.network.NetworkUtils
 import com.kogicodes.sokoni.network.RequestService
 import ke.co.calista.tafuta.R
+import ke.co.calista.tafuta.model.oauth.LoginData
+import ke.co.calista.tafuta.model.oauth.LoginResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -17,7 +19,7 @@ import retrofit2.Response
 
 class SignUpRepository  (application: Application) {
 
-    val signUpObservable = MutableLiveData<Resource<Oauth>>()
+    val signUpObservable = MutableLiveData<Resource<LoginData>>()
 
     private val context: Context
 
@@ -44,17 +46,17 @@ class SignUpRepository  (application: Application) {
         GlobalScope.launch(context = Dispatchers.Main) {
 
             val call = RequestService.getService("").signUp(parameters.profile?.email, parameters.profile?.password, parameters.profile?.firstName, parameters.profile?.lastName, parameters.profile?.mobile)
-            call.enqueue(object : Callback<Oauth> {
-                override fun onFailure(call: Call<Oauth>?, t: Throwable?) {
+            call.enqueue(object : Callback<LoginResponse> {
+                override fun onFailure(call: Call<LoginResponse>?, t: Throwable?) {
                     setIsError(t.toString())
                 }
 
-                override fun onResponse(call: Call<Oauth>?, response: Response<Oauth>?) {
+                override fun onResponse(call: Call<LoginResponse>?, response: Response<LoginResponse>?) {
                     if (response != null) {
                         if (response.isSuccessful) {
 
-                            if (response.body()?.status == 1 && !response.body()?.error!!) {
-                                setIsSuccesful(response.body()!!)
+                            if (response.body()?.error==false) {
+                                response.body()!!.data?.let { setIsSuccesful(it) }
                             } else {
                                 response.body()?.message?.let { setIsError(it) }
                             }
@@ -75,7 +77,7 @@ class SignUpRepository  (application: Application) {
         signUpObservable.postValue(Resource.loading(null))
     }
 
-    private fun setIsSuccesful(parameters: Oauth) {
+    private fun setIsSuccesful(parameters: LoginData) {
         signUpObservable.postValue(Resource.success(parameters))
 
 

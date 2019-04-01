@@ -41,10 +41,11 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        fab.setOnClickListener { addNew() }
-        scanCard.setOnClickListener{scan()}
-        scanRl.setOnClickListener{scan()}
 
+
+        add.setOnClickListener { addNew() }
+        scan.setOnClickListener { scan() }
+        list.setOnClickListener { list() }
     }
 
     private fun scan() {
@@ -53,6 +54,11 @@ class MainFragment : Fragment() {
         } else {
             requestPermissions()
         }
+    }
+    private fun list(){
+        activity?.supportFragmentManager?.beginTransaction()
+            ?.replace(R.id.container, AssetListFragment.newInstance())
+            ?.commitNow()
     }
     private fun startScan() {
 
@@ -66,20 +72,27 @@ class MainFragment : Fragment() {
             .withEnableAutoFocus(true)
             .withBleepEnabled(true)
             .withCenterTracker()
-            //.withOnly2DScanning()
             // .withBarcodeFormats( Barcode.ALL_FORMATS)
             .withBackfacingCamera()
             .withText("Scanning...")
             .withResultListener { barcode ->
 
-                view?.let { Snackbar.make(it, ""+barcode, Snackbar.LENGTH_LONG).setAction("Re-Scan") { startScan() }.show() }
+               // view?.let { Snackbar.make(it, ""+barcode, Snackbar.LENGTH_LONG).setAction("Re-Scan") { startScan() }.show() }
 
 
+                loadAsset()
 
             }
             .build()
         materialBarcodeScanner.startScan()
 
+    }
+
+    fun loadAsset(){
+       // childFragmentManager.beginTransaction()
+           // .replace(R.id.container, AssetFragment.newInstance())
+          //  .commitNow()
+        viewModel.loadAsset()
     }
 
 

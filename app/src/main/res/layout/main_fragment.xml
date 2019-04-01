@@ -1,66 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.cardview.widget.CardView
 		xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		xmlns:tools="http://schemas.android.com/tools"
 		android:id="@+id/main"
-		android:background="@color/colorAccent"
+		app:cardElevation="6dp"
+		app:cardCornerRadius="6dp"
+		app:cardUseCompatPadding="true"
+		android:background="@color/white"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		tools:context=".ui.main.MainFragment">
-	
-	
-	<com.google.android.material.card.MaterialCardView
-			android:id="@+id/scanCard"
-			app:cardElevation="10dp"
-			android:padding="6dp"
-			
-			
-			
-			app:cardUseCompatPadding="true"
-			android:background="@color/white"
-			app:cardBackgroundColor="@color/white"
-			android:layout_centerInParent="true"
-			android:layout_width="300dp"
-			android:layout_height="300dp"
-			android:shape="ring"
-			app:cardCornerRadius="130dp">
-		
-		<RelativeLayout
-				android:id="@+id/scanRl"
+	<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+		<LinearLayout
+				
 				android:layout_width="match_parent"
-				android:layout_height="match_parent">
-			<com.kogicodes.sokoni.utils.CircleImage.KogiImageView
-					android:layout_width="100dp"
-					
-					android:backgroundTint="@color/white"
-					android:id="@+id/addIcon"
-					android:layout_centerInParent="true"
-					
-					android:src="@drawable/scan"
-					android:layout_height="100dp"/>
+				android:layout_height="wrap_content">
 			<TextView
-					android:textStyle="bold"
+					android:padding="5dp"
+					android:layout_gravity="center"
+					android:gravity="center"
+					android:textAlignment="center"
 					android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-					android:textColor="@color/black"
-					android:layout_centerInParent="true"
-					android:layout_below="@+id/addIcon"
-					android:text="SCAN"
-					android:layout_width="wrap_content"
-			          android:layout_height="wrap_content"
-			/>
+					android:text="Hi [ Mark ] welcome to Tafuta"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"/>
+		</LinearLayout>
+		<com.google.android.material.card.MaterialCardView
+				android:layout_width="match_parent"
+				app:cardUseCompatPadding="true"
+				app:cardElevation="6dp"
+				
+				android:background="@color/colorPrimary"
+				app:cardCornerRadius="6dp"
+				android:layout_height="wrap_content">
+			
+			<LinearLayout android:layout_width="match_parent"
+			              android:layout_margin="20dp"
+			              android:orientation="horizontal"
+			              android:layout_height="wrap_content">
+				<TextView
+						android:layout_width="0dp"
+						android:layout_weight="1"
+						android:textStyle="bold"
+						android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+						android:text="All "
+						android:layout_height="wrap_content"/>
+				<TextView
+						android:textColor="@color/black"
+						android:layout_width="0dp"
+						android:layout_weight="1"
+						android:textStyle="bold"
+						android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+						android:text="300 "
+						android:layout_height="wrap_content"/>
+			
+			</LinearLayout>
 		
-		</RelativeLayout>
+		</com.google.android.material.card.MaterialCardView>
+		<com.google.android.material.card.MaterialCardView
+				android:layout_width="match_parent"
+				app:cardUseCompatPadding="true"
+				app:cardElevation="6dp"
+				app:cardCornerRadius="6dp"
+				android:layout_height="wrap_content">
+			
+			<LinearLayout android:layout_width="match_parent"
+			              android:layout_margin="20dp"
+			
+			              android:orientation="horizontal"
+			              android:layout_height="wrap_content">
+				<TextView
+						android:layout_width="0dp"
+						android:layout_weight="1"
+						android:textStyle="bold"
+						android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+						android:text="Active "
+						android:layout_height="wrap_content"/>
+				<TextView
+						android:textColor="@color/black"
+						android:layout_width="0dp"
+						android:layout_weight="1"
+						android:textStyle="bold"
+						android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+						android:text="300 "
+						android:layout_height="wrap_content"/>
+			
+			</LinearLayout>
 		
-	</com.google.android.material.card.MaterialCardView>
+		</com.google.android.material.card.MaterialCardView>
+		<com.google.android.material.card.MaterialCardView
+				android:layout_width="match_parent"
+				app:cardUseCompatPadding="true"
+				app:cardElevation="6dp"
+				app:cardCornerRadius="6dp"
+				android:layout_height="wrap_content">
+			
+			<LinearLayout android:layout_width="match_parent"
+			              android:orientation="horizontal"
+			              android:layout_margin="20dp"
+			
+			              android:layout_height="wrap_content">
+				<TextView
+						android:layout_width="0dp"
+						android:layout_weight="1"
+						android:textStyle="bold"
+						android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+						android:text="Un-Assinged "
+						android:layout_height="wrap_content"/>
+				<TextView
+						android:textColor="@color/black"
+						android:layout_width="0dp"
+						android:layout_weight="1"
+						android:textStyle="bold"
+						android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+						android:text="300 "
+						android:layout_height="wrap_content"/>
+			
+			</LinearLayout>
+		
+		</com.google.android.material.card.MaterialCardView>
+		<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				
+				android:layout_height="wrap_content">
+			
+			<com.google.android.material.card.MaterialCardView
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					app:cardUseCompatPadding="true"
+					app:cardCornerRadius="6dp"
+					android:id="@+id/scan"
+					app:cardElevation="6dp"
+					android:layout_height="wrap_content">
+				<LinearLayout
+						
+						android:orientation="vertical"
+						android:layout_width="match_parent" 
+						android:layout_height="wrap_content">
+					<ImageView
+							android:gravity="center_horizontal"
+							android:layout_margin="4dp"
+							android:src="@drawable/scan"
+							android:layout_width="match_parent"
+							android:layout_height="150dp"/>
+					<TextView android:layout_width="match_parent"
+					          android:text="Scan"
+					          android:layout_marginBottom="8dp"
+					          android:gravity="center_horizontal"
+					
+					          android:textColor="@color/black"
+					          android:textStyle="bold"
+					          android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+					          android:layout_height="wrap_content"/>
+					
+				</LinearLayout>
+				
+			</com.google.android.material.card.MaterialCardView>
+			<com.google.android.material.card.MaterialCardView
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					app:cardUseCompatPadding="true"
+					app:cardCornerRadius="6dp"
+					app:cardElevation="6dp"
+					android:id="@+id/add"
+					android:layout_height="wrap_content">
+				<LinearLayout
+						android:orientation="vertical"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content">
+					<ImageView
+							android:layout_margin="4dp"
+							android:gravity="center_horizontal"
+							
+							android:src="@drawable/ic_add_black_24dp"
+							android:layout_width="match_parent"
+							android:layout_height="150dp"/>
+					<TextView android:layout_width="match_parent"
+					          android:text="New"
+					          android:gravity="center_horizontal"
+					          android:layout_marginBottom="8dp"
+					
+					          android:textColor="@color/black"
+					          android:textStyle="bold"
+					          android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+					          android:layout_height="wrap_content"/>
+					
+				</LinearLayout>
+				
+			</com.google.android.material.card.MaterialCardView>
+			<com.google.android.material.card.MaterialCardView
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					app:cardUseCompatPadding="true"
+					app:cardCornerRadius="6dp"
+					app:cardElevation="6dp"
+					android:id="@+id/list"
+					android:layout_height="wrap_content">
+				<LinearLayout
+						android:orientation="vertical"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content">
+					<ImageView
+							android:gravity="center_horizontal"
+							android:layout_margin="4dp"
+							android:src="@drawable/list"
+							android:layout_width="match_parent"
+							android:layout_height="150dp"/>
+					<TextView android:layout_width="match_parent"
+					          android:text="List"
+					          android:layout_marginBottom="8dp"
+					
+					          android:gravity="center_horizontal"
+					          android:layout_gravity="center_horizontal"
+					          android:textColor="@color/black"
+					          android:textStyle="bold"
+					          android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+					          android:layout_height="wrap_content"/>
+					
+				</LinearLayout>
+				
+			</com.google.android.material.card.MaterialCardView>
+			
+			
+		</LinearLayout>
 	
-	<com.google.android.material.floatingactionbutton.FloatingActionButton
-			android:layout_width="wrap_content"
-			android:id="@+id/fab"
-			android:layout_alignParentBottom="true"
-			android:layout_alignParentEnd="true"
-			android:layout_margin="16dp"
-			android:src="@drawable/ic_add_black_24dp"
-	  
-			android:layout_height="wrap_content"/>
-</RelativeLayout>
+	</LinearLayout>
+	
+	
+	
+	
+	
+
+</androidx.cardview.widget.CardView>

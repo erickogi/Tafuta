@@ -12,7 +12,7 @@ import ke.co.calista.tafuta.R
 import java.lang.ref.WeakReference
 
 
-class CustomFieldsViewHolder(itemView: View, listener: OnRecyclerViewItemClick) : RecyclerView.ViewHolder(itemView), View.OnClickListener,View.OnLongClickListener {
+class AssetValueViewHolder(itemView: View, listener: OnRecyclerViewItemClick) : RecyclerView.ViewHolder(itemView), View.OnClickListener,View.OnLongClickListener {
     override fun onLongClick(p0: View?): Boolean {
         listenerWeakReference.get()?.onLongClickListener(adapterPosition)
 
@@ -32,10 +32,12 @@ class CustomFieldsViewHolder(itemView: View, listener: OnRecyclerViewItemClick) 
 
 
     init {
+
         this.itemVew = itemView
 
         label = itemView.findViewById(R.id.label)
         value = itemView.findViewById(R.id.value)
+
 
     }
 

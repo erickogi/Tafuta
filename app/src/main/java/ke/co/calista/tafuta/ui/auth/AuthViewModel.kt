@@ -4,10 +4,9 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.ViewModel
 import com.kogicodes.sokoni.models.custom.Resource
 import com.kogicodes.sokoni.models.v1.oauth.Oauth
-import ke.co.calista.tafuta.model.oauth.PasswordRecoveryModel
+import ke.co.calista.tafuta.model.oauth.LoginData
 import ke.co.calista.tafuta.storage.RecoverPasswordUpRepository
 import ke.co.calista.tafuta.storage.SignInRepository
 import ke.co.calista.tafuta.storage.SignUpRepository
@@ -20,9 +19,9 @@ class AuthViewModel (application: Application) : AndroidViewModel(application){
 
 
 
-    private val signInObservable = MediatorLiveData<Resource<Oauth>>()
-    private val signUpObservable = MediatorLiveData<Resource<Oauth>>()
-    private val recoverPasswordObservable = MediatorLiveData<Resource<PasswordRecoveryModel>>()
+    private val signInObservable = MediatorLiveData<Resource<LoginData>>()
+    private val signUpObservable = MediatorLiveData<Resource<LoginData>>()
+    private val recoverPasswordObservable = MediatorLiveData<Resource<LoginData>>()
 
     init {
 
@@ -43,7 +42,7 @@ class AuthViewModel (application: Application) : AndroidViewModel(application){
         signInRepository.signIn(parameters)
     }
 
-    fun observeSignIn(): LiveData<Resource<Oauth>> {
+    fun observeSignIn(): LiveData<Resource<LoginData>> {
         return signInObservable
     }
 
@@ -53,7 +52,7 @@ class AuthViewModel (application: Application) : AndroidViewModel(application){
     }
 
 
-    fun observeSignUp(): LiveData<Resource<Oauth>> {
+    fun observeSignUp(): LiveData<Resource<LoginData>> {
         return signUpObservable
     }
 
@@ -63,11 +62,11 @@ class AuthViewModel (application: Application) : AndroidViewModel(application){
     }
 
 
-    fun observeRecoverPassword(): LiveData<Resource<PasswordRecoveryModel>> {
+    fun observeRecoverPassword(): LiveData<Resource<LoginData>> {
         return recoverPasswordObservable
     }
 
-    fun saveProfile(data: Oauth) {
+    fun saveProfile(data: LoginData) {
 
         signInRepository.saveProfile(data)
 

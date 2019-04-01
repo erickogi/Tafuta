@@ -2,81 +2,88 @@ package ke.co.calista.tafuta.model.asset
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-class Asset {
+class Asset : Serializable{
+    @SerializedName("id")
+    @Expose
+     var id: String? = null
     @SerializedName("code")
     @Expose
-    var assetCode: String? = null
+     var code: String? = null
 
-
-    @SerializedName("tag")
+    @SerializedName("typeId")
     @Expose
-    var assetTag: String? = null
-
-
-    @SerializedName("name")
+     var typeId: String? = null
+    @SerializedName("typeName")
     @Expose
-    var assetName: String? = null
+    var typeName: String? = null
 
-    @SerializedName("location")
+
+    @SerializedName("departmentId")
     @Expose
-    var assetLocation: String? = null
-
-
-    @SerializedName("current_assignemt")
+     var departmentId: String? = null
+    @SerializedName("departmentName")
     @Expose
-    var assetCurrentAssignment: Assignment? = null
+    var departmentName: String? = null
 
-    @SerializedName("current_assignemt_code")
+    @SerializedName("categoryId")
     @Expose
-    var assetCurrentAssignmentCode: Int? = null
-
-
-
-    @SerializedName("accusation_date")
+     var categoryId: String? = null
+    @SerializedName("categoryName")
     @Expose
-    var assetAccusationDate: String? = null
-
-    @SerializedName("serial_number")
+    var categoryName: String? = null
+    @SerializedName("subCategoryId")
     @Expose
-    var assetSerialNumber: String? = null
-
-    @SerializedName("condition")
+     var subCategoryId: String? = null
+    @SerializedName("subCategoryName")
     @Expose
-    var assetCondition: String? = null
-
+    var subCategoryName: String? = null
+    @SerializedName("sNo")
+    @Expose
+     var sNo: String? = null
+    @SerializedName("scanCode")
+    @Expose
+     var scanCode: String? = null
+    @SerializedName("names")
+    @Expose
+     var names: String? = null
+    @SerializedName("stateCondition")
+    @Expose
+     var stateCondition: String? = null
     @SerializedName("description")
     @Expose
-    var assetDescription: String? = null
-
-
-    @SerializedName("permissions")
+     var description: String? = null
+    @SerializedName("imageUrls")
     @Expose
-    var permission: Permission? = null
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @SerializedName("created_by")
+     var imageUrls: String? = null
+    @SerializedName("depreciationRate")
     @Expose
-    var createdBy: Int? = null
-
-    @SerializedName("created_at")
+     var depreciationRate: String? = null
+    @SerializedName("relatedData")
     @Expose
-    var createdAt: String? = null
+     var relatedData: ArrayList<RelatedData>? = null
 
-    @SerializedName("updated_at")
+    @SerializedName("metaData")
     @Expose
-    var updatedAt: String? = null
+     var metaData: String? = null
+    @SerializedName("createdById")
+    @Expose
+     var createdById: String? = null
 
+    @SerializedName("timeStamp")
+    @Expose
+     var timeStamp: String? = null
+    @SerializedName("assignment")
+    @Expose
+     var assignment: Int? = null
+    @SerializedName("statusCode")
+    @Expose
+     var statusCode: String? = null
+    @SerializedName("statusName")
+    @Expose
+     var statusName: String? = null
+    @SerializedName("createByNames")
+    @Expose
+     var createByNames: String? = null
 }

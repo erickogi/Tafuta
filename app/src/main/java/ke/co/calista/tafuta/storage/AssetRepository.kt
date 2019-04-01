@@ -2,6 +2,7 @@ package ke.co.calista.tafuta.storage
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.kogicodes.sokoni.models.custom.Resource
@@ -10,6 +11,7 @@ import com.kogicodes.sokoni.models.v1.oauth.Profile
 import com.kogicodes.sokoni.network.NetworkUtils
 import com.kogicodes.sokoni.network.RequestService
 import ke.co.calista.tafuta.R
+import ke.co.calista.tafuta.model.asset.AssetsResponse
 import ke.co.calista.tafuta.model.oauth.LoginData
 import ke.co.calista.tafuta.model.oauth.LoginResponse
 import ke.co.calista.tafuta.storage.dao.LoginDataDao
@@ -21,12 +23,12 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SignInRepository (application: Application) {
+class AssetRepository (application: Application) {
 
     private val profileDao: LoginDataDao
     private val db: XDatabase
 
-    val signInObservable = MutableLiveData<Resource<LoginData>>()
+    val assetsObservable = MutableLiveData<Resource<AssetsResponse>>()
     private val context: Context
 
 
@@ -37,11 +39,11 @@ class SignInRepository (application: Application) {
 
     }
 
-    fun signIn(parameters: Oauth) {
+    fun getAssets(perPage : String,pageNo : String) {
 
         setIsLoading()
         if (NetworkUtils.isConnected(context)) {
-            excuteSignIn(parameters)
+            excuteGetAssets(perPage,pageNo)
         } else {
             setIsError(context.getString(R.string.no_connection))
         }
@@ -49,21 +51,25 @@ class SignInRepository (application: Application) {
 
     }
 
-    private fun excuteSignIn(parameters: Oauth) {
+    private fun excuteGetAssets(perPage : String,pageNo : String) {
         GlobalScope.launch(context = Dispatchers.Main) {
 
-            val call = RequestService.getService("").signIn(parameters.profile?.email, parameters.profile?.password)
-            call.enqueue(object : Callback<LoginResponse> {
-                override fun onFailure(call: Call<LoginResponse>?, t: Throwable?) {
+            val call = RequestService.getService("").assets("",perPage,pageNo)
+            call.enqueue(object : Callback<AssetsResponse> {
+                override fun onFailure(call: Call<AssetsResponse>?, t: Throwable?) {
                     setIsError(t.toString())
+
+                    Log.d("assetListErr",t.toString())
                 }
 
-                override fun onResponse(call: Call<LoginResponse>?, response: Response<LoginResponse>?) {
+                override fun onResponse(call: Call<AssetsResponse>?, response: Response<AssetsResponse>?) {
+                    Log.d("assetListErr",response.toString())
+
                     if (response != null) {
                         if (response.isSuccessful) {
 
-                            if (!response.body()?.error !!) {
-                                response.body()!!.data?.let { setIsSuccesful(it) }
+                            if (response.body()?.error == false) {
+                                response.body()?.let { setIsSuccesful(it) }
                             } else {
                                 response.body()?.message?.let { setIsError(it) }
                             }
@@ -81,16 +87,16 @@ class SignInRepository (application: Application) {
     }
 
     private fun setIsLoading() {
-        signInObservable.postValue(Resource.loading(null))
+        assetsObservable.postValue(Resource.loading(null))
     }
 
-    private fun setIsSuccesful(parameters: LoginData) {
-        signInObservable.postValue(Resource.success(parameters))
+    private fun setIsSuccesful(parameters: AssetsResponse) {
+        assetsObservable.postValue(Resource.success(parameters))
 
 
     }
     private fun setIsError( message: String) {
-        signInObservable.postValue(Resource.error(message,null))
+        assetsObservable.postValue(Resource.error(message,null))
 
     }
 
@@ -110,6 +116,10 @@ class SignInRepository (application: Application) {
 
     fun fetchProfile(): LoginData {
         return profileDao.fetch()
+
+    }
+
+    fun loadAsset() {
 
     }
 
