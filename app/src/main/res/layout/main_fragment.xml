@@ -4,10 +4,13 @@
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		xmlns:tools="http://schemas.android.com/tools"
 		android:id="@+id/main"
+		
+		
 		app:cardElevation="6dp"
 		app:cardCornerRadius="6dp"
 		app:cardUseCompatPadding="true"
-		android:background="@color/white"
+		app:cardBackgroundColor="#A49EB6"
+		android:background="@color/colorAccent"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		tools:context=".ui.main.MainFragment">
@@ -20,6 +23,8 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content">
 			<TextView
+					android:textColor="@color/black"
+					android:textStyle="bold"
 					android:padding="5dp"
 					android:layout_gravity="center"
 					android:gravity="center"
@@ -35,7 +40,7 @@
 				app:cardElevation="6dp"
 				
 				android:background="@color/colorPrimary"
-				app:cardCornerRadius="6dp"
+				app:cardCornerRadius="3dp"
 				android:layout_height="wrap_content">
 			
 			<LinearLayout android:layout_width="match_parent"
@@ -65,7 +70,7 @@
 				android:layout_width="match_parent"
 				app:cardUseCompatPadding="true"
 				app:cardElevation="6dp"
-				app:cardCornerRadius="6dp"
+				app:cardCornerRadius="3dp"
 				android:layout_height="wrap_content">
 			
 			<LinearLayout android:layout_width="match_parent"
@@ -96,7 +101,7 @@
 				android:layout_width="match_parent"
 				app:cardUseCompatPadding="true"
 				app:cardElevation="6dp"
-				app:cardCornerRadius="6dp"
+				app:cardCornerRadius="3dp"
 				android:layout_height="wrap_content">
 			
 			<LinearLayout android:layout_width="match_parent"
@@ -133,7 +138,7 @@
 					android:layout_width="0dp"
 					android:layout_weight="1"
 					app:cardUseCompatPadding="true"
-					app:cardCornerRadius="6dp"
+					app:cardCornerRadius="3dp"
 					android:id="@+id/scan"
 					app:cardElevation="6dp"
 					android:layout_height="wrap_content">
@@ -143,11 +148,12 @@
 						android:layout_width="match_parent" 
 						android:layout_height="wrap_content">
 					<ImageView
+							android:layout_gravity="center"
 							android:gravity="center_horizontal"
 							android:layout_margin="4dp"
 							android:src="@drawable/scan"
-							android:layout_width="match_parent"
-							android:layout_height="150dp"/>
+							android:layout_width="60dp"
+							android:layout_height="60dp"/>
 					<TextView android:layout_width="match_parent"
 					          android:text="Scan"
 					          android:layout_marginBottom="8dp"
@@ -165,21 +171,22 @@
 					android:layout_width="0dp"
 					android:layout_weight="1"
 					app:cardUseCompatPadding="true"
-					app:cardCornerRadius="6dp"
+					app:cardCornerRadius="3dp"
 					app:cardElevation="6dp"
 					android:id="@+id/add"
 					android:layout_height="wrap_content">
 				<LinearLayout
+						
 						android:orientation="vertical"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content">
 					<ImageView
 							android:layout_margin="4dp"
 							android:gravity="center_horizontal"
-							
+							android:layout_gravity="center"
 							android:src="@drawable/ic_add_black_24dp"
-							android:layout_width="match_parent"
-							android:layout_height="150dp"/>
+							android:layout_width="60dp"
+							android:layout_height="60dp"/>
 					<TextView android:layout_width="match_parent"
 					          android:text="New"
 					          android:gravity="center_horizontal"
@@ -197,7 +204,7 @@
 					android:layout_width="0dp"
 					android:layout_weight="1"
 					app:cardUseCompatPadding="true"
-					app:cardCornerRadius="6dp"
+					app:cardCornerRadius="3dp"
 					app:cardElevation="6dp"
 					android:id="@+id/list"
 					android:layout_height="wrap_content">
@@ -206,11 +213,12 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content">
 					<ImageView
+							android:layout_gravity="center"
 							android:gravity="center_horizontal"
 							android:layout_margin="4dp"
 							android:src="@drawable/list"
-							android:layout_width="match_parent"
-							android:layout_height="150dp"/>
+							android:layout_width="60dp"
+							android:layout_height="60dp"/>
 					<TextView android:layout_width="match_parent"
 					          android:text="List"
 					          android:layout_marginBottom="8dp"

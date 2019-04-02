@@ -2,11 +2,13 @@ package com.kogicodes.sokoni.network
 
 
 
-import com.kogicodes.sokoni.models.v1.oauth.Profile
 import ke.co.calista.tafuta.model.asset.AssetsResponse
 import ke.co.calista.tafuta.model.oauth.LoginResponse
 import retrofit2.Call
-import retrofit2.http.*
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
+import retrofit2.http.POST
 
 
 /**
@@ -26,6 +28,10 @@ interface EndPoints {
     @POST("assets/fetch.php")
     fun assets(@Field("id") id: String?, @Field("perPage") perPage: String?, @Field("pageNo") pageNo: String?): Call<AssetsResponse>
 
+
+    //http://skylar.co.ke/assetmanagement/api/dashboard/info.php
+    @GET("dashboard/info.php")
+    // fun dashBoard(): Call<BaseData>
 
 
 

@@ -1,10 +1,10 @@
 package ke.co.calista.tafuta.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import ke.co.calista.tafuta.R
 import ke.co.calista.tafuta.storage.PrefrenceManager
 
@@ -16,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
         if (!isFinishing) {
 
             if(PrefrenceManager(this).getLoginStatus()==0) {
-                val intent = Intent(applicationContext, AuthActivity::class.java)
+                val intent = Intent(applicationContext, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }else{
