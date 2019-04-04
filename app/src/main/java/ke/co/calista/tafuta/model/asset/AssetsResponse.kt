@@ -6,8 +6,9 @@ import com.google.gson.annotations.SerializedName
 
 
 class AssetsResponse {
+    @SerializedName("error")
     @Expose
-     var error: Boolean? = null
+    var error: Boolean? = null
     @SerializedName("message")
     @Expose
      var message: String? = null

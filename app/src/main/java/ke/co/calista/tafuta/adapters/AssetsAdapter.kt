@@ -31,6 +31,10 @@ class AssetsAdapter(private var modelList: List<Asset>?, private val recyclerLis
         holder.assetType.text = "" + model.typeName
         holder.assetStatus.text = "" + model.statusName
 
+        var tn = model.typeName?.get(0)
+        holder.tn.text = tn.toString()
+
+
 
     }
 

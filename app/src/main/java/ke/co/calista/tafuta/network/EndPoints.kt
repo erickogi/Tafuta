@@ -1,14 +1,10 @@
 package com.kogicodes.sokoni.network
 
 
-
-import ke.co.calista.tafuta.model.asset.AssetsResponse
+import ke.co.calista.tafuta.model.asset.*
 import ke.co.calista.tafuta.model.oauth.LoginResponse
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 
 /**
@@ -29,13 +25,31 @@ interface EndPoints {
     fun assets(@Field("id") id: String?, @Field("perPage") perPage: String?, @Field("pageNo") pageNo: String?): Call<AssetsResponse>
 
 
-    //http://skylar.co.ke/assetmanagement/api/dashboard/info.php
     @GET("dashboard/info.php")
-    // fun dashBoard(): Call<BaseData>
+    fun dashBoard(): Call<DashboardResponse>
 
 
+    @POST("assets/add.php")
+    fun sendAsset(@Body asset: NewAsset): Call<SendAssetResponse>
 
 
+    @FormUrlEncoded
+    @POST("assets/scan.php")
+    fun scanAsset(@Field("scanCode") id: String?): Call<AssetResponse>
+
+
+    @FormUrlEncoded
+    @POST("assets/assign.php")
+    fun assignAsset(
+        @Field("assetId") assetId: String?, @Field("actionId") actionId: String?, @Field("initId") initId: String?, @Field(
+            "targetId"
+        ) targetId: String?, @Field("description") description: String?
+    ): Call<AssignResponse>
+
+
+    @FormUrlEncoded
+    @POST("users/fetch.php")
+    fun users(@Field("perPage") perPage: String?, @Field("pageNo") pageNo: String?): Call<UsersResponse>
 
 
 }

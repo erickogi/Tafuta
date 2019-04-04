@@ -14,7 +14,8 @@
 			android:id="@+id/recycler_view"
 			android:layout_margin="4dp"
 			
-	  
+			
+			android:layout_marginBottom="50dp"
 			android:layout_above="@+id/buttonPanel"
 			android:layout_height="match_parent">
 		
@@ -80,5 +81,22 @@
 	
 	</LinearLayout>
 	
+	<com.wang.avi.AVLoadingIndicatorView
+			android:visibility="gone"
+			android:id="@+id/avi"
+			app:indicatorColor="@color/colorPrimary"
+			android:layout_centerInParent="true"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:indicatorName="BallPulseSyncIndicator"
+			android:layout_centerVertical="true"
+			android:layout_centerHorizontal="true"/>
 	
+	<Button android:layout_width="match_parent"
+	        android:text="Refresh"
+	        android:visibility="gone"
+	        android:layout_margin="10dp"
+	        android:layout_alignParentBottom="true"
+	        android:id="@+id/refresh"
+	        android:layout_height="wrap_content"/>
 </RelativeLayout>

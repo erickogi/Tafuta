@@ -16,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
         if (!isFinishing) {
 
             if(PrefrenceManager(this).getLoginStatus()==0) {
-                val intent = Intent(applicationContext, MainActivity::class.java)
+                val intent = Intent(applicationContext, AuthActivity::class.java)
                 startActivity(intent)
                 finish()
             }else{

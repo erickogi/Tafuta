@@ -29,5 +29,5 @@ class AssetTypes {
      var statusName: String? = null
     @SerializedName("assetDepartments")
     @Expose
-     var assetDepartments: List<AssetDepartment>? = null
+    var assetDepartments: ArrayList<AssetDepartment>? = null
 }

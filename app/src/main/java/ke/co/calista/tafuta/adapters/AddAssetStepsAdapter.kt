@@ -4,13 +4,11 @@ import android.content.Context
 import android.os.Bundle
 import androidx.annotation.IntRange
 import androidx.fragment.app.FragmentManager
-
 import com.stepstone.stepper.Step
 import com.stepstone.stepper.adapter.AbstractFragmentStepAdapter
 import com.stepstone.stepper.viewmodel.StepViewModel
 import ke.co.calista.tafuta.ui.addAsset.AddItemFragment1
 import ke.co.calista.tafuta.ui.addAsset.AddItemFragment2
-import ke.co.calista.tafuta.ui.addAsset.AddItemFragment3
 
 class AddAssetStepsAdapter(fm: FragmentManager, context: Context) : AbstractFragmentStepAdapter(fm, context) {
 
@@ -32,14 +30,14 @@ class AddAssetStepsAdapter(fm: FragmentManager, context: Context) : AbstractFrag
                 step2.arguments = b2
                 return step2
             }
-            2 -> {
-                val step3 = AddItemFragment3()
-                val b3 = Bundle()
-                b3.putInt(CURRENT_STEP_POSITION_KEY, position)
-
-
-                return step3
-            }
+//            2 -> {
+//                val step3 = AddItemFragment3()
+//                val b3 = Bundle()
+//                b3.putInt(CURRENT_STEP_POSITION_KEY, position)
+//
+//
+//                return step3
+//            }
 
 
         }
@@ -47,7 +45,7 @@ class AddAssetStepsAdapter(fm: FragmentManager, context: Context) : AbstractFrag
     }
 
     override fun getCount(): Int {
-        return 3
+        return 2
     }
 
     override fun getViewModel(@IntRange(from = 0) position: Int): StepViewModel {

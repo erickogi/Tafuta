@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RequestService {
 
 
-    private val BASE_URL = "http://192.168.0.101:8080/tricom/system-api/api/"
+    private val BASE_URL = "http://skylar.co.ke/assetmanagement/api/"
 
     var gson = GsonBuilder()
             .setLenient()

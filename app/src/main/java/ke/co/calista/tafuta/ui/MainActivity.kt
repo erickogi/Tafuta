@@ -3,9 +3,13 @@ package ke.co.calista.tafuta.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ke.co.calista.tafuta.R
+import ke.co.calista.tafuta.model.asset.Asset
 import ke.co.calista.tafuta.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
+
+
+    var asset: Asset? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

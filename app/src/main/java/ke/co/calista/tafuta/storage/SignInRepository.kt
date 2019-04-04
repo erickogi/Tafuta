@@ -6,14 +6,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.kogicodes.sokoni.models.custom.Resource
 import com.kogicodes.sokoni.models.v1.oauth.Oauth
-import com.kogicodes.sokoni.models.v1.oauth.Profile
 import com.kogicodes.sokoni.network.NetworkUtils
 import com.kogicodes.sokoni.network.RequestService
 import ke.co.calista.tafuta.R
 import ke.co.calista.tafuta.model.oauth.LoginData
 import ke.co.calista.tafuta.model.oauth.LoginResponse
 import ke.co.calista.tafuta.storage.dao.LoginDataDao
-import ke.co.calista.tafuta.storage.dao.ProfileDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

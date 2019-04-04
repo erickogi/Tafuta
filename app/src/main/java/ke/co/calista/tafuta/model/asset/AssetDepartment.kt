@@ -18,6 +18,10 @@ class AssetDepartment {
     @SerializedName("names")
     @Expose
      var names: String? = null
+    @SerializedName("relatedData")
+    @Expose
+    var relatedData: ArrayList<RelatedData>? = null
+
     @SerializedName("timeStamp")
     @Expose
      var timeStamp: String? = null

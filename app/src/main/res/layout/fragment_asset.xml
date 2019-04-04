@@ -1,210 +1,271 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:padding="6pt"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 	
-	<com.google.android.material.card.MaterialCardView
+	<LinearLayout
 			android:layout_width="match_parent"
-			app:cardUseCompatPadding="true"
-			android:layout_height="wrap_content">
+			android:orientation="vertical"
+			android:layout_height="match_parent">
+		<TextView android:layout_width="wrap_content"
+		          android:layout_height="wrap_content"
+		          android:text="Asset Information"
+		          android:textSize="9pt"
+		          android:textStyle="bold"
+		          android:textColor="@android:color/holo_orange_dark"/>
+		<TextView android:layout_width="match_parent"
+		          android:layout_height="1dp"
+		          android:background="@android:color/holo_blue_dark"/>
 		<LinearLayout android:layout_width="match_parent"
-		              android:orientation="vertical"
-		              android:layout_height="match_parent">
-			<LinearLayout android:layout_width="match_parent"
-			              android:layout_margin="6dp"
-			              android:padding="4dp"
+		              android:layout_height="wrap_content"
+		              android:orientation="horizontal"
+		              android:padding="2dp">
+			<LinearLayout android:layout_width="0dp"
 			              android:layout_height="wrap_content"
-			>
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:text="Code"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-				
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:id="@+id/code"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-			
+			              android:orientation="vertical"
+			              android:layout_weight="1">
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Basic Information"
+						android:textColor="@android:color/holo_blue_dark"
+						android:textStyle="bold"
+						android:textSize="5pt"
+						android:textAllCaps="false"
+						android:paddingTop="3dp"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Scan Code"
+						android:textColor="#424040"
+						android:textStyle="normal"
+						android:textSize="5pt"
+						android:textAllCaps="true"
+						android:paddingTop="3dp"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/code"
+						android:text="25478"
+						android:textColor="#303030"
+						android:textStyle="bold"
+						android:textSize="6pt"
+						android:textAllCaps="false"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Serial/Model/Chassis"
+						android:textColor="#424040"
+						android:textStyle="normal"
+						android:textSize="5pt"
+						android:textAllCaps="true"
+						android:paddingTop="3dp"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="25478"
+						android:id="@+id/asset_serial"
+						android:textColor="#303030"
+						android:textStyle="bold"
+						android:textSize="6pt"
+						android:textAllCaps="false"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Names"
+						android:textColor="#424040"
+						android:textStyle="normal"
+						android:textSize="5pt"
+						android:textAllCaps="true"
+						android:paddingTop="3dp"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/asset_name"
+						android:text="25478"
+						android:textColor="#303030"
+						android:textStyle="bold"
+						android:textSize="6pt"
+						android:textAllCaps="false"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Type"
+						android:textColor="#424040"
+						android:textStyle="normal"
+						android:textSize="5pt"
+						android:textAllCaps="true"
+						android:paddingTop="3dp"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/typeName"
+						android:text="25478"
+						android:textColor="#303030"
+						android:textStyle="bold"
+						android:textSize="6pt"
+						android:textAllCaps="false"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Department"
+						android:textColor="#424040"
+						android:textStyle="normal"
+						android:textSize="5pt"
+						android:textAllCaps="true"
+						android:paddingTop="3dp"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/departmentName"
+						android:text="25478"
+						android:textColor="#303030"
+						android:textStyle="bold"
+						android:textSize="6pt"
+						android:textAllCaps="false"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Category"
+						android:textColor="#424040"
+						android:textStyle="normal"
+						android:textSize="5pt"
+						android:textAllCaps="true"
+						android:paddingTop="3dp"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/categoryName"
+						android:text="25478"
+						android:textColor="#303030"
+						android:textStyle="bold"
+						android:textSize="6pt"
+						android:textAllCaps="false"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Condition"
+						android:textColor="#424040"
+						android:textStyle="normal"
+						android:textSize="5pt"
+						android:textAllCaps="true"
+						android:paddingTop="3dp"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/asset_condition"
+						android:text="25478"
+						android:textColor="#303030"
+						android:textStyle="bold"
+						android:textSize="6pt"
+						android:textAllCaps="false"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Status"
+						android:textColor="#424040"
+						android:textStyle="normal"
+						android:textSize="5pt"
+						android:textAllCaps="true"
+						android:paddingTop="3dp"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/status"
+						android:text="25478"
+						android:textColor="#303030"
+						android:textStyle="bold"
+						android:textSize="6pt"
+						android:textAllCaps="false"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Created By"
+						android:textColor="#424040"
+						android:textStyle="normal"
+						android:textSize="5pt"
+						android:textAllCaps="true"
+						android:paddingTop="3dp"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/createdBy"
+						android:text="25478"
+						android:textColor="#303030"
+						android:textStyle="bold"
+						android:textSize="6pt"
+						android:textAllCaps="false"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Time Stamp"
+						android:textColor="#424040"
+						android:textStyle="normal"
+						android:textSize="5pt"
+						android:textAllCaps="true"
+						android:paddingTop="3dp"/>
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/timeStamp"
+						android:text="25478"
+						android:textColor="#303030"
+						android:textStyle="bold"
+						android:textSize="6pt"
+						android:textAllCaps="false"/>
 			</LinearLayout>
-			<LinearLayout android:layout_width="match_parent"
-			              android:layout_margin="6dp"
-			              android:padding="4dp"
+			<LinearLayout android:layout_width="0dp"
 			              android:layout_height="wrap_content"
-			>
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:text="S/No"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
+			              android:layout_weight="1"
+			              android:orientation="vertical">
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Related Information"
+						android:textColor="@android:color/holo_blue_dark"
+						android:textStyle="bold"
+						android:textSize="5pt"
+						android:textAllCaps="false"
+						android:paddingTop="3dp"/>
+				<androidx.recyclerview.widget.RecyclerView
+						android:layout_width="match_parent"
+						android:id="@+id/recycler_view"
+						android:layout_height="match_parent">
 				
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:id="@+id/asset_serial"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-			
+				</androidx.recyclerview.widget.RecyclerView>
 			</LinearLayout>
-			<LinearLayout android:layout_width="match_parent"
-			              android:layout_margin="6dp"
-			              android:padding="4dp"
-			              android:layout_height="wrap_content"
-			>
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:text="Names"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-				
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:id="@+id/asset_name"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-			
-			</LinearLayout>
-			<LinearLayout android:layout_width="match_parent"
-			              android:layout_margin="6dp"
-			              android:padding="4dp"
-			              android:layout_height="wrap_content"
-			>
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:text="Condition"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-				
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:id="@+id/asset_condition"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-			
-			</LinearLayout>
-			<LinearLayout android:layout_width="match_parent"
-			              android:layout_margin="6dp"
-			              android:padding="4dp"
-			              android:layout_height="wrap_content"
-			>
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:text="status"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-				
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:id="@+id/status"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-			
-			</LinearLayout>
-			<LinearLayout android:layout_width="match_parent"
-			              android:layout_margin="6dp"
-			              android:padding="4dp"
-			              android:layout_height="wrap_content"
-			>
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:text="create By"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-				
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:id="@+id/createdBy"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-			
-			</LinearLayout>
-			<LinearLayout android:layout_width="match_parent"
-			              android:layout_margin="6dp"
-			              android:padding="4dp"
-			              android:layout_height="wrap_content"
-			>
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:text="Type"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-				
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:id="@+id/typeName"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-			
-			</LinearLayout>
-			<LinearLayout android:layout_width="match_parent"
-			              android:layout_margin="6dp"
-			              android:padding="4dp"
-			              android:layout_height="wrap_content"
-			>
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:text="Department"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-				
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:id="@+id/departmentName"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-			
-			</LinearLayout>
-			<LinearLayout android:layout_width="match_parent"
-			              android:layout_margin="6dp"
-			              android:padding="4dp"
-			              android:layout_height="wrap_content"
-			>
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:text="Category"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-				
-				<TextView android:layout_width="0dp"
-				          android:layout_weight="1"
-				          android:id="@+id/categoryName"
-				          android:textStyle="bold"
-				          android:textAppearance="@style/Base.TextAppearance.AppCompat"
-				          android:layout_height="wrap_content"/>
-			
-			</LinearLayout>
-		
 		</LinearLayout>
-	</com.google.android.material.card.MaterialCardView>
-	<com.google.android.material.card.MaterialCardView
-			android:layout_width="match_parent"
-			app:cardUseCompatPadding="true"
-			android:layout_height="wrap_content">
+		<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Log Information (Track Info)"
+				android:textColor="@android:color/holo_blue_dark"
+				android:textStyle="bold"
+				android:textSize="5pt"
+				android:textAllCaps="false"
+				android:paddingTop="5dp"/>
 		<androidx.recyclerview.widget.RecyclerView
 				android:layout_width="match_parent"
-				android:id="@+id/recycler_view"
+				android:id="@+id/recycler_view_logs"
 				android:layout_height="match_parent">
-			
+		
 		</androidx.recyclerview.widget.RecyclerView>
-	</com.google.android.material.card.MaterialCardView>
+	
+	</LinearLayout>
+	<com.wang.avi.AVLoadingIndicatorView
+			android:visibility="gone"
+			android:id="@+id/avi"
+			app:indicatorColor="@color/colorPrimary"
+			android:layout_centerInParent="true"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:indicatorName="BallPulseSyncIndicator"
+			android:layout_centerVertical="true"
+			android:layout_centerHorizontal="true"/>
 
-</LinearLayout>
+
+</RelativeLayout>

@@ -54,9 +54,9 @@ class Validator {
          * @param updateUI - if true and if data is EditText, the function sets error to the EditText or its TextInputLayout
          * @return - true if the name is valid.
          */
-        fun isValidName(data: Any, updateUI: Boolean = true): Boolean {
+        fun isValidName(data: Any, updateUI: Boolean = true, length: Int): Boolean {
             val str = getText(data)
-            val valid = str.trim().length > 2
+            val valid = str.trim().length > length
 
             // Set error if required
             if (updateUI) {

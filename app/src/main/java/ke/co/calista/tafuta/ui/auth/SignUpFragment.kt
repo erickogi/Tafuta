@@ -1,17 +1,17 @@
 package ke.co.calista.tafuta.ui.auth
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
 import com.kogicodes.sokoni.models.custom.Resource
 import com.kogicodes.sokoni.models.custom.Status
@@ -126,11 +126,11 @@ class SignUpFragment : Fragment() {
     }
 
     private fun validate(): Boolean {
-        if(!Validator.isValidName(firstName)){
+        if (!Validator.isValidName(firstName, true, 4)) {
             return false
         }
 
-        if(!Validator.isValidName(lastName)){
+        if (!Validator.isValidName(lastName, true, 4)) {
            // return false
         }
 

@@ -2,7 +2,6 @@ package ke.co.calista.tafuta.model.oauth
 
 import androidx.room.Entity
 import androidx.room.Index
-import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import ke.co.calista.tafuta.model.asset.AssetTypes
@@ -67,7 +66,7 @@ class LoginData {
     @field:SerializedName("statusName")
     @Expose
     var statusName: String? = null
-    @field:SerializedName("filters")
+    @field:SerializedName("assetTypes")
     @Expose
     var filters: ArrayList<AssetTypes>? = null
 }
